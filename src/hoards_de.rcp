@@ -1,0 +1,670 @@
+/*
+ * @(#)hoards_de.rcp
+ *
+ * Copyright 1999-2000, Aaron Ardiri (mailto:aaron@ardiri.com)
+ * All rights reserved.
+ *
+ * This file was generated as part of the "hoards" program developed for 
+ * the Palm Computing Platform designed by Palm: 
+ *
+ *   http://www.palm.com/ 
+ *
+ * The contents of this file is confidential and proprietrary in nature 
+ * ("Confidential Information"). Redistribution or modification without 
+ * prior consent of the original author is prohibited. 
+ *
+ * --------------------------------------------------------------------
+ *             THIS FILE CONTAINS THE GERMAN LANGUAGE TEXT
+ * --------------------------------------------------------------------
+ */
+
+#include "resource.h"
+
+ALERT ID removeLevelSetAlert DEFAULTBUTTON 1 WARNING
+BEGIN
+  TITLE "Installierte Level löschen"
+  MESSAGE "'^1' wirklich löschen?"
+  BUTTONS "Ja" "Nein"
+END
+
+ALERT ID removeLevelAlert DEFAULTBUTTON 1 WARNING
+BEGIN
+  TITLE "Level löschen"
+  MESSAGE "Möchten Sie wirklich den Level löschen '^1'?"
+  BUTTONS "Ja" "Nein"
+END
+
+ALERT ID resetHighScoresAlert DEFAULTBUTTON 1 WARNING
+BEGIN
+  TITLE "High Scores neusetzen"
+  MESSAGE "Sind Sie sicher das Sie den High Score neu setzen wollen?"
+  BUTTONS "Ja" "Nein"
+END
+
+FORM ID infoForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Über Hoards"
+
+  FORMBITMAP AT (8 16) BITMAP bitmapIcon
+  LABEL "http://www.gdata.de/" AUTOID AT (52 PrevTop)
+  LABEL "info@gdata.de" AUTOID AT (60 PrevBottom) FONT 1
+
+  FORMBITMAP AT (88 PrevBottom+4) BITMAP bitmapPalm
+  LABEL "\251 1999-2001" AUTOID AT (8 PrevTop+2)
+  LABEL "G DATA Software AG" AUTOID AT (8 PrevBottom)
+  LABEL "All rights reserved" AUTOID AT (8 PrevBottom)
+
+  LABEL "Hoards" AUTOID AT (8 PrevBottom+3) FONT 1
+  LABEL "Championship Edition (v1.1.2)" AUTOID AT (8 PrevBottom-1) FONT 1
+
+  LABEL "Douglas E. Smith war an dieser" AUTOID AT (8 PrevBottom+3)
+  LABEL "Software nicht beteiligt." AUTOID AT (8 PrevBottom)
+
+  BUTTON "Ok" ID infoFormOkButton AT (CENTER 138 40 AUTO)
+END
+
+FORM ID deviForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Inkontabilität"
+
+  LABEL "Das Gerät ist nicht kompatibel." AUTOID AT (CENTER 20)
+  LABEL "Lesen Sie das Handbuch für Hilfe." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "http://www.gdata.de/" AUTOID AT (CENTER PrevTop+15) FONT 1
+
+  LABEL "\251 1999-2001" AUTOID AT (8 PrevTop+20)
+  FORMBITMAP AT (88 PrevTop) BITMAP bitmapPalm
+  LABEL "G DATA Software AG" AUTOID AT (8 PrevTop+12)
+  LABEL "All rights reserved" AUTOID AT (8 PrevTop+12)
+
+  LABEL "Hoards" AUTOID AT (8 PrevTop+16) FONT 1
+  LABEL "Championship Edition (v1.1.2)" AUTOID AT (8 PrevTop+12) FONT 1
+
+  BUTTON "Ok" AUTOID AT (CENTER 138 40 AUTO)
+END
+
+FORM ID cfigForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Konfiguration"
+
+  FORMBITMAP AT (0 30) BITMAP bitmapKeyConfig
+
+  POPUPTRIGGER "" ID cfigFormHardKey1Trigger AT (4 PrevTop-14 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormHardKey1List AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormHardKey1Trigger cfigFormHardKey1List
+
+  POPUPTRIGGER "" ID cfigFormHardKey4Trigger AT (108 PrevTop 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormHardKey4List AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormHardKey4Trigger cfigFormHardKey4List
+
+  POPUPTRIGGER "" ID cfigFormPageUpTrigger AT (56 PrevTop+4 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormPageUpList AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormPageUpTrigger cfigFormPageUpList
+
+  POPUPTRIGGER "" ID cfigFormHardKey2Trigger AT (20 PrevTop+38 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormHardKey2List AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormHardKey2Trigger cfigFormHardKey2List
+
+  POPUPTRIGGER "" ID cfigFormHardKey3Trigger AT (96 PrevTop 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormHardKey3List AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormHardKey3Trigger cfigFormHardKey3List
+
+  POPUPTRIGGER "" ID cfigFormPageDownTrigger AT (56 PrevTop+6 44 AUTO) LEFTANCHOR
+  LIST "Links" "Rechts" "Hoch" "Runter" "L-Dig" "R-Dig" ID cfigFormPageDownList AT (PrevLeft+16 PrevTop 28 16) VISIBLEITEMS 6 NONUSABLE
+  POPUPLIST ID cfigFormPageDownTrigger cfigFormPageDownList
+
+  LABEL "Start Level:" AUTOID AT (8 PrevTop+14)
+  POPUPTRIGGER "" ID cfigFormStage0Trigger AT (60 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" ID cfigFormStage0List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 3 NONUSABLE
+  POPUPLIST ID cfigFormStage0Trigger cfigFormStage0List
+
+  POPUPTRIGGER "" ID cfigFormStage1Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID cfigFormStage1List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID cfigFormStage1Trigger cfigFormStage1List
+
+  POPUPTRIGGER "" ID cfigFormStage2Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID cfigFormStage2List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID cfigFormStage2Trigger cfigFormStage2List
+
+  CHECKBOX "Cheats aktiviert" ID cfigFormCheatCheckbox AT (61 PrevTop+14 AUTO AUTO)
+
+  LABEL "Sound:" AUTOID AT (8 PrevTop+16)
+  PUSHBUTTON "" ID cfigFormSound0Button AT (64 PrevTop+2 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound1Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound2Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound3Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound4Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound5Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound6Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  PUSHBUTTON "" ID cfigFormSound7Button AT (PrevLeft+10 PrevTop 9 8) GROUP 1
+  CHECKBOX "Sound stumm" ID cfigFormMuteCheckbox AT (61 PrevTop+12 AUTO AUTO)
+
+  BUTTON "Ok" ID cfigFormOkButton AT (25 138 50 AUTO)
+  BUTTON "Abbrechen" ID cfigFormCancelButton AT (85 PrevTop 50 AUTO)
+END
+
+FORM ID grayForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Graustufen Konfiguration"
+
+  LABEL "Einige Geräte haben Probleme mit" AUTOID AT (CENTER 16)
+  LABEL "Graustufen und erschweren die" AUTOID AT (CENTER PrevTop+11)
+  LABEL "Grafikansicht." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "Sie können unten die LCD Helligkeit" AUTOID AT (CENTER PrevTop+16)
+  LABEL "der Graustufen anpassen." AUTOID AT (CENTER PrevTop+11)
+
+  FORMBITMAP AT (4 PrevTop+16) BITMAP bitmapGrayscaleTest
+
+  PUSHBUTTON "" ID grayWhite1Button AT (68 PrevTop+1 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite2Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite3Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite4Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite5Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite6Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+  PUSHBUTTON "" ID grayWhite7Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 1
+
+  PUSHBUTTON "" ID grayLightGray1Button AT (68 PrevTop+12 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray2Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray3Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray4Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray5Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray6Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  PUSHBUTTON "" ID grayLightGray7Button AT (PrevLeft+12 PrevTop 11 8) GROUP 2
+  
+  PUSHBUTTON "" ID grayDarkGray1Button AT (68 PrevTop+12 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray2Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray3Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray4Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray5Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray6Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+  PUSHBUTTON "" ID grayDarkGray7Button AT (PrevLeft+12 PrevTop 11 8) GROUP 3
+
+  PUSHBUTTON "" ID grayBlack1Button AT (68 PrevTop+12 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack2Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack3Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack4Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack5Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack6Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+  PUSHBUTTON "" ID grayBlack7Button AT (PrevLeft+12 PrevTop 11 8) DISABLED GROUP 4
+
+  BUTTON "Ok" ID grayFormOkButton AT (CENTER 138 40 AUTO)
+END
+
+FORM ID highForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Registrieren Sie Ihren Score"
+
+  FORMBITMAP AT (6 16) BITMAP bitmapPaw
+  LABEL "http://www.ardiri.com/" AUTOID AT (52 PrevTop+4)
+
+  LABEL "aaron@ardiri.com" AUTOID AT (54 PrevTop+11) FONT 1
+
+  LABEL "Score:" AUTOID AT (40 PrevTop+22) FONT 1
+  FIELD ID highFormScoreField AT (88 PrevTop 48 AUTO) NONEDITABLE SINGLELINE MAXCHARS 5
+  LABEL "Level:" AUTOID AT (40 PrevTop+12) FONT 1
+  FIELD ID highFormLevelField AT (88 PrevTop 48 AUTO) NONEDITABLE SINGLELINE MAXCHARS 5
+  LABEL "Code:" AUTOID AT (40 PrevTop+12) FONT 1
+  FIELD ID highFormCodeField AT (88 PrevTop 48 AUTO) NONEDITABLE SINGLELINE MAXCHARS 5
+
+  LABEL "Mailen Sie diese Informationen an" AUTOID AT (CENTER PrevTop+16)
+  LABEL "die angegebene Adresse um in die" AUTOID AT (CENTER PrevTop+12)
+  LABEL "Welt Highscore Liste zu kommen." AUTOID AT (CENTER PrevTop+12)
+
+  BUTTON "Ok" ID highFormOkButton AT (CENTER 138 40 AUTO)
+END
+
+FORM ID helpForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Anleitung"
+
+  SCROLLBAR ID helpFormScrollBar AT (147 16 7 116) VALUE 0 MIN 0 MAX 0 PAGESIZE 100
+
+  BUTTON "Erledigt" ID helpFormOkButton AT (6 138 AUTO AUTO)
+  LABEL "\251 G DATA Software AG" AUTOID AT (56 PrevTop+1)
+END
+
+FORM ID xmemForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "System Speicher"
+
+  FORMBITMAP AT (6 16) BITMAP bitmapIcon
+  LABEL "info@gdata.de" AUTOID AT (56 PrevTop+4) FONT 1
+  LABEL "Hoards of the Deep Realm" AUTOID AT (42 PrevBottom)
+  LABEL "http://www.gdata.de/" AUTOID AT (CENTER 48) FONT 1
+
+  LABEL "Nicht ausreichtend Speicher" AUTOID AT (CENTER PrevTop+18)
+  LABEL "für die gewünchte Operation" AUTOID AT (CENTER PrevTop+12)
+
+  LABEL "Deaktivieren Sie alle nicht nötigen" AUTOID AT (CENTER PrevTop+16)
+  LABEL "Hacks und versuchen Sie es erneut" AUTOID AT (CENTER PrevTop+12)
+  LABEL "mit der Standardeinstellung." AUTOID AT (CENTER PrevTop+12)
+
+  BUTTON "Ok" ID xmemFormOkButton AT (CENTER 138 40 AUTO)
+END
+
+FORM ID cr8rForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Level Set erstellen"
+
+  LABEL "Sind Sie Hoards Meister?" AUTOID AT (CENTER 18)
+
+  LABEL "Erstellen Sie Hoards Level" AUTOID AT (CENTER PrevTop+16)
+  LABEL "und teilen Sie diese mit anderen" AUTOID AT (CENTER PrevTop+11)
+  LABEL "Hoards Fans auf der ganzen Welt." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "http://www.ardiri.com/" AUTOID AT (CENTER PrevTop+16) FONT 1
+
+  LABEL "Geben Sie einen Namen für Ihren" AUTOID AT (CENTER PrevTop+16)
+  LABEL "selbst erstellten Level unten ein." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "Level Set:" AUTOID AT (8 PrevTop+18)
+  FIELD ID cr8rFormDBNameField AT (60 PrevTop 90 AUTO) EDITABLE UNDERLINED SINGLELINE MAXCHARS 18 AUTOSHIFT
+
+  BUTTON "Ok" ID cr8rFormOkButton AT (25 138 50 AUTO)
+  BUTTON "Abbrechen" ID cr8rFormCancelButton AT (85 PrevTop 50 AUTO)
+  GRAFFITISTATEINDICATOR AT (144 PrevTop+1)
+END
+
+FORM ID moveForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Level bewegen"
+
+  LABEL "Mit dieser Option können Sie" AUTOID AT (CENTER 16)
+  LABEL "die Reihenfolge der Level verändern." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "Level:" AUTOID AT (8 PrevTop+16) FONT 1
+  POPUPTRIGGER "" ID moveFormSStage0Trigger AT (64 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" ID moveFormSStage0List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 3 NONUSABLE
+  POPUPLIST ID moveFormSStage0Trigger moveFormSStage0List
+
+  POPUPTRIGGER "" ID moveFormSStage1Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID moveFormSStage1List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID moveFormSStage1Trigger moveFormSStage1List
+
+  POPUPTRIGGER "" ID moveFormSStage2Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID moveFormSStage2List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID moveFormSStage2Trigger moveFormSStage2List
+
+  LABEL "Ziel:" AUTOID AT (8 PrevTop+14) FONT 1
+  POPUPTRIGGER "" ID moveFormDStage0Trigger AT (64 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" ID moveFormDStage0List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 3 NONUSABLE
+  POPUPLIST ID moveFormDStage0Trigger moveFormDStage0List
+
+  POPUPTRIGGER "" ID moveFormDStage1Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID moveFormDStage1List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID moveFormDStage1Trigger moveFormDStage1List
+
+  POPUPTRIGGER "" ID moveFormDStage2Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID moveFormDStage2List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID moveFormDStage2Trigger moveFormDStage2List
+
+  LABEL "Bestätigung wird den Level auf" AUTOID AT (CENTER PrevTop+16)
+  LABEL "die gewünschte Position verschieben" AUTOID AT (CENTER PrevTop+11)
+  LABEL "jeweils um eine Position." AUTOID AT (CENTER PrevTop+11)
+
+  LABEL "Sollte die Aktion nicht möglich sein" AUTOID AT (CENTER PrevTop+16)
+  LABEL "wird ein Beep Signal ertönen." AUTOID AT (CENTER PrevTop+11)
+
+  BUTTON "Ok" ID moveFormOkButton AT (25 138 50 AUTO)
+  BUTTON "Abbrechen" ID moveFormCancelButton AT (85 PrevTop 50 AUTO)
+END
+
+FORM ID gotoForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Zum Level"
+
+  LABEL "Mit dieser Option können Sie" AUTOID AT (CENTER 16)
+  LABEL "durch die Level navigieren." AUTOID AT (CENTER PrevTop+11)
+
+  FORMBITMAP AT (3 PrevTop+15) BITMAP bitmapNavigation
+
+  LABEL "Zu einem bestimmten Level springen" AUTOID AT (CENTER PrevTop+35)
+
+  LABEL "Level:" AUTOID AT (8 PrevTop+16) FONT 1
+  POPUPTRIGGER "" ID gotoFormStage0Trigger AT (60 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" ID gotoFormStage0List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 3 NONUSABLE
+  POPUPLIST ID gotoFormStage0Trigger gotoFormStage0List
+
+  POPUPTRIGGER "" ID gotoFormStage1Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID gotoFormStage1List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID gotoFormStage1Trigger gotoFormStage1List
+
+  POPUPTRIGGER "" ID gotoFormStage2Trigger AT (PrevLeft+12 PrevTop 16 AUTO) LEFTANCHOR
+  LIST "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" ID gotoFormStage2List AT (PrevLeft+16 PrevTop 16 16) VISIBLEITEMS 5 NONUSABLE
+  POPUPLIST ID gotoFormStage2Trigger gotoFormStage2List
+
+  LABEL "Sollte die Aktion nicht möglich sein" AUTOID AT (CENTER PrevTop+16)
+  LABEL "wird ein Beep Signal ertönen." AUTOID AT (CENTER PrevTop+11)
+
+  BUTTON "Ok" ID gotoFormOkButton AT (25 138 50 AUTO)
+  BUTTON "Abbrechen" ID gotoFormCancelButton AT (85 PrevTop 50 AUTO)
+END
+
+FORM ID xlevForm AT (2 2 156 156) MODAL
+BEGIN
+  TITLE "Datenbank Fehler"
+
+  FORMBITMAP AT (6 16) BITMAP bitmapIcon
+  LABEL "info@gdata.de" AUTOID AT (56 PrevTop+4) FONT 1
+  LABEL "Hoards of the Deep Realm" AUTOID AT (42 PrevBottom)
+  LABEL "http://www.gdata.de/" AUTOID AT (CENTER 48) FONT 1
+
+  LABEL "Es ist nicht möglich die Datenbank" AUTOID AT (CENTER PrevTop+18)
+  LABEL "für die gewünschte Aktion zu öffnen." AUTOID AT (CENTER PrevTop+12)
+
+  LABEL "Wenn Sie Level editieren, stellen" AUTOID AT (CENTER PrevTop+16)
+  LABEL "Sie sicher das das Level Set im" AUTOID AT (CENTER PrevTop+12)
+  LABEL "RAM Ihres Gerätes gespeichert ist." AUTOID AT (CENTER PrevTop+12)
+
+  BUTTON "Ok" ID xlevFormOkButton AT (CENTER 138 40 AUTO)
+END
+
+FORM ID mainForm AT (0 0 160 160) NOSAVEBEHIND
+BEGIN
+  TITLE "Hoards"
+
+  BUTTON "" ID globalFormHelpButton AT (133 1 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapHelp
+  BUTTON "" ID globalFormAboutButton AT (PrevLeft+14 PrevTop 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapAbout
+
+  FORMBITMAP AT (0 15) BITMAP bitmapLogo
+
+  LABEL "Installierte Level:" AUTOID AT (8 PrevTop+58) FONT 1 
+  LABEL "Zählen:" AUTOID AT (PrevLeft+106 PrevTop) FONT 1 
+
+  GADGET ID mainFormGameGadget AT (4 PrevTop+12 146 33)
+  SCROLLBAR ID mainFormScrollBar AT (151 PrevTop 7 PrevHeight) VALUE 0 MIN 0 MAX 0 PAGESIZE 3
+
+  PUSHBUTTON "Spielen" ID mainFormPlayButton AT (CENTER PrevBottom+2 40 AUTO) 
+
+  LABEL "\251 2000 G DATA Software AG" AUTOID AT (CENTER PrevTop+14) FONT 1
+END
+
+MENU ID mainMenu_nogray
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Spielen"          mainMenuItemPlay      "P"
+    MENUITEM "Beamen"           mainMenuItemBeam      "B"
+    MENUITEM SEPARATOR
+    MENUITEM "Erstellen"        mainMenuItemCreate    "N"
+    MENUITEM "Bearbeiten"       mainMenuItemEdit      "E"
+    MENUITEM "Löschen"          mainMenuItemDelete    "D"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"    menuItemConfig        "C"
+  END
+  PULLDOWN "Score"
+  BEGIN
+    MENUITEM "High Score"       mainMenuItemHigh      "H"
+    MENUITEM SEPARATOR
+    MENUITEM "Scores neusetzen" mainMenuItemResetHigh "X"
+  END
+  PULLDOWN "Hilfe"
+  BEGIN
+    MENUITEM "Anleitung"        menuItemHelp          "I"
+    MENUITEM "Über..."          menuItemAbout
+  END
+END
+
+MENU ID mainMenu_gray
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Spielen"          mainMenuItemPlay      "P"
+    MENUITEM "Beamen"           mainMenuItemBeam      "B"
+    MENUITEM SEPARATOR
+    MENUITEM "Erstellen"        mainMenuItemCreate    "N"
+    MENUITEM "Bearbeiten"       mainMenuItemEdit      "E"
+    MENUITEM "Löschen"          mainMenuItemDelete    "D"
+    MENUITEM SEPARATOR
+    MENUITEM "Graustufen"       menuItemGrayscale     "G"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"    menuItemConfig        "C"
+  END
+  PULLDOWN "Score"
+  BEGIN
+    MENUITEM "High Score"       mainMenuItemHigh      "H"
+    MENUITEM SEPARATOR
+    MENUITEM "Scores neusetzen" mainMenuItemResetHigh "X"
+  END
+  PULLDOWN "Hilfe"
+  BEGIN
+    MENUITEM "Anleitung"        menuItemHelp          "I"
+    MENUITEM "Über..."          menuItemAbout
+  END
+END
+
+MENU ID mainMenu_nogray_nobeam
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Spielen"          mainMenuItemPlay      "P"
+    MENUITEM SEPARATOR
+    MENUITEM "Erstellen"        mainMenuItemCreate    "N"
+    MENUITEM "Bearbeiten"       mainMenuItemEdit      "E"
+    MENUITEM "Löschen"          mainMenuItemDelete    "D"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"    menuItemConfig        "C"
+  END
+  PULLDOWN "Score"
+  BEGIN
+    MENUITEM "High Score"       mainMenuItemHigh      "H"
+    MENUITEM SEPARATOR
+    MENUITEM "Scores neusetzen" mainMenuItemResetHigh "X"
+  END
+  PULLDOWN "Hilfe"
+  BEGIN
+    MENUITEM "Anleitung"        menuItemHelp          "I"
+    MENUITEM "Über..."          menuItemAbout
+  END
+END
+
+MENU ID mainMenu_gray_nobeam
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Spielen"          mainMenuItemPlay      "P"
+    MENUITEM SEPARATOR
+    MENUITEM "Erstellen"        mainMenuItemCreate    "N"
+    MENUITEM "Bearbeiten"       mainMenuItemEdit      "E"
+    MENUITEM "Löschen"          mainMenuItemDelete    "D"
+    MENUITEM SEPARATOR
+    MENUITEM "Graustufen"       menuItemGrayscale     "G"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"    menuItemConfig        "C"
+  END
+  PULLDOWN "Score"
+  BEGIN
+    MENUITEM "High Score"       mainMenuItemHigh      "H"
+    MENUITEM SEPARATOR
+    MENUITEM "Scores neusetzen" mainMenuItemResetHigh "X"
+  END
+  PULLDOWN "Hilfe"
+  BEGIN
+    MENUITEM "Anleitung"        menuItemHelp          "I"
+    MENUITEM "Über..."          menuItemAbout
+  END
+END
+
+FORM ID editForm AT (0 0 160 160) NOSAVEBEHIND
+MENUID editMenu
+BEGIN
+  TITLE "Hoards: Editor"
+
+  BUTTON "" ID globalFormHelpButton AT (133 1 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapHelp
+  BUTTON "" ID globalFormAboutButton AT (PrevLeft+14 PrevTop 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapAbout
+
+  FORMBITMAP AT (0 44) BITMAP bitmapLogo
+  LABEL "KEINE LEVEL VERFÜGBAR" AUTOID AT (CENTER PrevTop+62) FONT 1
+  
+  BUTTON "<" ID editFormPrevButton AT (2 149 6 11) NOFRAME
+  BUTTON "" ID editFormGotoButton AT (PrevRight+1 PrevTop 21 11) NOFRAME
+  BUTTON ">" ID editFormNextButton AT (PrevRight+1 PrevTop 6 11) NOFRAME
+
+  FORMBITMAP AT (80 150) BITMAP bitmapTools
+  BUTTON "" ID editFormEmptyButton AT (PrevLeft-1 PrevTop-1 8 10) NOFRAME
+  BUTTON "" ID editFormPlayerButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormMonkButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormGoldButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormLadderButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormRopeButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormBrickButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormFallThruButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormRockButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+  BUTTON "" ID editFormEndLadderButton AT (PrevLeft+8 PrevTop 8 10) NOFRAME
+END
+
+MENU ID editMenu
+BEGIN
+  PULLDOWN "Editor"
+  BEGIN
+    MENUITEM "Level speichern"     editMenuItemSave      "S"
+    MENUITEM "Änderungen umkehren" editMenuItemRevert    "R"
+    MENUITEM SEPARATOR
+    MENUITEM "Level erstellen"     editMenuItemCreate    "C"
+    MENUITEM "Level löschen"       editMenuItemDelete    "D"
+    MENUITEM "Level verschieben"   editMenuItemMove      "M"
+    MENUITEM SEPARATOR
+    MENUITEM "Voriger Level"       editMenuItemPrev      "P"
+    MENUITEM "Nächster Level"      editMenuItemNext      "N"
+    MENUITEM "Zum Level"           editMenuItemGoto      "G"
+    MENUITEM SEPARATOR
+    MENUITEM "Ende"                editMenuItemExit      "X"
+  END
+  PULLDOWN "Werkzeug"
+  BEGIN
+    MENUITEM "Pal Links"           editMenuItemPanLeft   "1"
+    MENUITEM "Pal Rechts"          editMenuItemPanRight  "2"
+    MENUITEM "Pal Hoch"            editMenuItemPanUp     "3"
+    MENUITEM "Pal Runter"          editMenuItemPanDown   "4"
+    MENUITEM SEPARATOR
+    MENUITEM "Level füllen"        editMenuItemFill      "F"
+  END
+  PULLDOWN "Hilfe"
+  BEGIN
+    MENUITEM "Anleitung"           menuItemHelp          "I"
+    MENUITEM "Über..."             menuItemAbout
+  END
+END
+
+FORM ID gameForm AT (0 0 160 160) NOSAVEBEHIND
+BEGIN
+  TITLE "Hoards"
+
+  BUTTON "" ID globalFormHelpButton AT (133 1 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapHelp
+  BUTTON "" ID globalFormAboutButton AT (PrevLeft+14 PrevTop 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapAbout
+
+  BUTTON "" ID gameFormSoundButton AT (0 147 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapSound
+  BUTTON "" ID gameFormPauseButton AT (PrevLeft+14 PrevTop 12 12) NOFRAME
+  FORMBITMAP AT (PrevLeft PrevTop) BITMAP bitmapPause
+END
+
+MENU ID gameMenu_nogray
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Pause"              gameMenuItemPause     "P"
+    MENUITEM "Begehe Selbstmord"  gameMenuItemSuicide   "S"
+    MENUITEM SEPARATOR
+    MENUITEM "Ende"               gameMenuItemExit      "X"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"      menuItemConfig        "C"
+  END
+  PULLDOWN "Help"
+  BEGIN
+    MENUITEM "Anleitung"          menuItemHelp          "I"
+    MENUITEM "Über..."            menuItemAbout
+  END
+END
+MENU ID gameMenu_gray
+BEGIN
+  PULLDOWN "Spiel"
+  BEGIN
+    MENUITEM "Pause"              gameMenuItemPause     "P"
+    MENUITEM "Begehe Selbstmord"  gameMenuItemSuicide   "S"
+    MENUITEM SEPARATOR
+    MENUITEM "Ende"               gameMenuItemExit      "X"
+    MENUITEM SEPARATOR
+    MENUITEM "Graustufen"         menuItemGrayscale     "G"
+    MENUITEM SEPARATOR
+    MENUITEM "Konfiguration"      menuItemConfig        "C"
+  END
+  PULLDOWN "Help"
+  BEGIN
+    MENUITEM "Anleitung"          menuItemHelp          "I"
+    MENUITEM "Über..."            menuItemAbout
+  END
+END
+
+VERSION "1.1.2"
+
+ICONFAMILY 
+  "images/icon1bpp.bmp" "images/icon2bpp.bmp" "" "images/icon8bpp.bmp" 
+TRANSPARENCY 0 255 0
+
+SMALLICONFAMILY 
+  "images/smic1bpp.bmp" "images/smic2bpp.bmp" "" "images/smic8bpp.bmp"
+TRANSPARENCY 0 255 0
+
+/*
+ * NOTE: due to speed issues running on the IIIc device in 8bpp display
+ *       mode the application *tweaks* the 4bit grayscale mode to use the
+ *       standard 16 color VGA palette.
+ *
+ *       // Aaron Ardiri, 2000
+ */
+
+BITMAPFAMILYSPECIAL bitmapPalm
+  "images/palm1bpp.bmp" "images/palm2bpp.bmp" "images/palm4bpc.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapPaw
+  "images/_paw1bpp.bmp" "images/_paw2bpp.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapIcon
+  "images/icon1bpp.bmp" "images/icon2bpp.bmp" "images/icon4bpc.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapLogo
+  "images/logo1bpp.bmp" "images/logo2bpp.bmp" "images/logo4bpc.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapKeyConfig 
+  "images/keys1bpp.bmp" "images/keys2bpp.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapNavigation 
+  "images/navi1bpp.bmp" "images/navi2bpp.bmp" "images/navi4bpc.bmp" COMPRESS
+
+BITMAP bitmapAbout "images/info1bpp.bmp" COMPRESS
+BITMAP bitmapHelp  "images/help1bpp.bmp" COMPRESS
+BITMAP bitmapSound "images/snd1bpp.bmp" COMPRESS
+BITMAP bitmapPause "images/paws1bpp.bmp" COMPRESS
+
+BITMAPGREY bitmapGrayscaleTest "images/gray2bpp.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapTools
+  "images/game/tool1bpp.bmp" "images/game/tool2bpp.bmp" 
+  "images/game/tool4bpc.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapHoles
+  "images/game/hole1bpp.bmp" "images/game/hole2bpp.bmp" 
+  "images/game/hole4bpc.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapPlayers
+  "images/game/plys1bpp.bmp" "images/game/plys2bpp.bmp" 
+  "images/game/plys4bpc.bmp" COMPRESS
+BITMAP bitmapPlayersMask "images/game/plys1bpp.bmp" COMPRESS
+
+BITMAPFAMILYSPECIAL bitmapMonks
+  "images/game/hrds1bpp.bmp" "images/game/hrds2bpp.bmp" 
+  "images/game/hrds4bpc.bmp" COMPRESS
+BITMAP bitmapMonksMask "images/game/hrds1bpp.bmp" COMPRESS
+
+BITMAP bitmapHelpSelectList "images/hmn11bpp_de.bmp"
+BITMAPFAMILYSPECIAL bitmapHelpEditTiles
+  "images/hed11bpp_de.bmp" "images/hed12bpp_de.bmp" 
+  "images/hed14bpc_de.bmp" COMPRESS
